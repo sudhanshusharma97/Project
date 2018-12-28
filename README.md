@@ -1,2 +1,2 @@
 # Project
-Simple calculator 
+Simple calculator for web app
