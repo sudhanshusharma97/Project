@@ -1,2 +1,2 @@
 # Project
-Simple calculator for web app
+Simple calculator for ohm's law 
