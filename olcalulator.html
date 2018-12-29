@@ -32,12 +32,7 @@ height:20px;
 }
 </style>
 
-
 </head>
-
-
-
-
 
 <body>
   <br>
@@ -47,21 +42,106 @@ height:20px;
   <center><h2> Welcome to Ohm's law calculator </h2></center>
 <center>
 
-<input  class="calculatorbox" type="text" name="Voltage" value="Voltage">
-<button  >+</button><button >-</button>
+<input id="voltage" class="calculatorbox" type="text" name="Voltage" value="Voltage">
+<button onclick="plusvoltage()">+</button><button >-</button>
 
-<input class="calculatorbox" type="text" name="Current" value="Current">
+<input id="current" class="calculatorbox" type="text" name="Current" value="Current">
 <button >+</button><button>-</button>
 
-<input class="calculatorbox" type="text" name="Resistance" value="Resistance">
-<button>+</button><button>-</button><br>
+
+<input id="resistance"  class="calculatorbox" type="text" name="Resistance" value="Resistance">
+<button  >+</button><button>-</button><br>
 </center>
 
-<br><br>
-<center><input class="" type="text" name="" value="0" disabled><input class="" type="text" name="" value="0" disabled><input class="" type="text" name="" value="0" disabled></center>
+
+<button onclick="calulate()" >Calculate</button>
+
+
 </body>
 
-<button>Calculate</button>
+<script type="text/javascript">
 
 
-<html>
+    var totalvoltage = 0;
+    var totalcurrent = 0;
+    var totalresistance = 0;
+    var voltage = -1;
+    var current = -1;
+    var resistance = -1;
+    var overallvoltage =
+    document.getElementById("voltage");
+
+    var overallcurrent =
+    document.getElementById("current");
+
+    var overallresistance =
+    document.getElementById("resistance");
+
+
+      function plusvoltage() {
+        voltage++;
+        overallvoltage.value = voltage;
+
+totalcurrent = voltage / resistance;
+
+    }
+
+
+
+
+
+
+
+      function minusvoltage(){
+      if (voltage > 0) {
+        voltage--;
+        overallvoltage.value = voltage;
+
+        totalcurrent = voltage / current;
+
+
+      }
+
+
+
+
+
+
+
+    }
+
+
+
+    var calvoltage = getElementById('voltage');
+    var calcurrent = getElementById('current');
+    var calresistance = getElementById('resistance');
+
+function calulate(){
+
+
+
+calvoltage.value = voltage;
+calcurrent.value = totalcurrent;
+calresistance.value = resistance;
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+function reset() {
+    document.getElementById("myForm").reset();
+  ca = -1;
+
+}
+</script>
+</html>
