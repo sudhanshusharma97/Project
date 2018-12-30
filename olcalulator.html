@@ -43,14 +43,14 @@ height:20px;
 <center>
 
 <input id="voltage" class="calculatorbox" type="text" name="Voltage" value="Voltage">
-<button onclick="plusvoltage()">+</button><button >-</button>
+
 
 <input id="current" class="calculatorbox" type="text" name="Current" value="Current">
-<button >+</button><button>-</button>
+
 
 
 <input id="resistance"  class="calculatorbox" type="text" name="Resistance" value="Resistance">
-<button  >+</button><button>-</button><br>
+<br>
 </center>
 
 
@@ -61,68 +61,32 @@ height:20px;
 
 <script type="text/javascript">
 
+var voltage =
+  document.getElementById("voltage");
 
-    var totalvoltage = 0;
-    var totalcurrent = 0;
-    var totalresistance = 0;
-    var voltage = -1;
-    var current = -1;
-    var resistance = -1;
-    var overallvoltage =
-    document.getElementById("voltage");
+var current =  document.getElementById("current");
 
-    var overallcurrent =
-    document.getElementById("current");
+var resistance = document.getElementById("resistance");
 
-    var overallresistance =
-    document.getElementById("resistance");
-
-
-      function plusvoltage() {
-        voltage++;
-        overallvoltage.value = voltage;
-
-totalcurrent = voltage / resistance;
-
-    }
+var overallvoltage =  getElementById('voltage');
+var overallcurrent =  getElementById('current');
+var overallresistance =  getElementById('resistance');
 
 
 
+function calculate(){
+
+
+overallvoltage = current * resistance;
+overallcurrent = voltage / resistance;
+overallresistance = current / resistance;
 
 
 
+overallvoltage.value = overallvoltage;
+overallcurrent.value = overallcurrent;
+overallresistance.value = overallcurrent;
 
-      function minusvoltage(){
-      if (voltage > 0) {
-        voltage--;
-        overallvoltage.value = voltage;
-
-        totalcurrent = voltage / current;
-
-
-      }
-
-
-
-
-
-
-
-    }
-
-
-
-    var calvoltage = getElementById('voltage');
-    var calcurrent = getElementById('current');
-    var calresistance = getElementById('resistance');
-
-function calulate(){
-
-
-
-calvoltage.value = voltage;
-calcurrent.value = totalcurrent;
-calresistance.value = resistance;
 
 
 
@@ -138,10 +102,27 @@ calresistance.value = resistance;
 
 
 
-function reset() {
-    document.getElementById("myForm").reset();
-  ca = -1;
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 </html>
