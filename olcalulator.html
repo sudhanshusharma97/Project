@@ -42,57 +42,40 @@ height:20px;
   <center><h2> Welcome to Ohm's law calculator </h2></center>
 <center>
 
-<input id="voltage" class="calculatorbox" type="text" name="Voltage" value="Voltage">
+<input id="voltage" class="calculatorbox" type="number"  value="">
 
 
-<input id="current" class="calculatorbox" type="text" name="Current" value="Current">
+<input id="current" class="calculatorbox" type="number"  value="">
 
 
 
-<input id="resistance"  class="calculatorbox" type="text" name="Resistance" value="Resistance">
+<input id="resistance"  class="calculatorbox" type="number"  value="">
 <br>
 </center>
 
 
-<button onclick="calulate()" >Calculate</button>
+<button onclick="calculate()" >Calculate</button>
 
 
 </body>
 
 <script type="text/javascript">
 
-var voltage =
-  document.getElementById("voltage");
-
-var current =  document.getElementById("current");
-
-var resistance = document.getElementById("resistance");
-
-var overallvoltage =  getElementById('voltage');
-var overallcurrent =  getElementById('current');
-var overallresistance =  getElementById('resistance');
 
 
 
-function calculate(){
+function calculate() {
+  var voltage = document.getElementById("voltage").value;
+  var current = document.getElementById("current").value;
+  var resistance = document.getElementById("resistance").value;
 
+  var v = current * resistance;
+  var c = voltage / current;
+  var r = voltage / resistance;
 
-overallvoltage = current * resistance;
-overallcurrent = voltage / resistance;
-overallresistance = current / resistance;
-
-
-
-overallvoltage.value = overallvoltage;
-overallcurrent.value = overallcurrent;
-overallresistance.value = overallcurrent;
-
-
-
-
-
+  alert("voltage is equivlent to " + v  + "Current is equivlent to " +  c  + "Resistance is equvilent to" + r   );
 }
-
+</script>
 
 
 
