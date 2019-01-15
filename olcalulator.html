@@ -191,7 +191,7 @@ border-radius: 50px;
 
 </head>
 
-<body>
+<body onload="start()">
   <ul>
       <li><a class="active" href="#home">Ohm's law calculator</a></li>
 
@@ -232,7 +232,19 @@ border-radius: 50px;
 
 <center><button onclick="calculate()" >CALCULATE</button></center>
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center><p>This calculator is just a simple project of sudhanshu sharma to test frontend and basic javascript skills</p></center>
 </body>
 
 <script type="text/javascript">
@@ -248,9 +260,9 @@ function calculate() {
   var v;
   var r;
 
-  if ( voltage == null || current  == null || resistance == null ) {
+  if ( voltage === null || current  === null || resistance === null ) {
 
-alert("Please add all values");
+alert("Please add values");
 
 } else {
 
