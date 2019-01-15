@@ -5,7 +5,18 @@
 <head>
 <style>
 
+#calbox{
 
+
+}
+
+
+
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 
 ul {
@@ -17,6 +28,7 @@ ul {
   position: fixed;
   top: 0;
   width: 100%;
+
 
 }
 
@@ -63,16 +75,17 @@ height:20px;
 
 button{
 
-  margin-top: 250px;
-width:100px;
-height:40px;
 
--webkit-box-shadow: 0px 0px 27px 1px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 0px 27px 1px rgba(0,0,0,0.75);
-box-shadow: 0px 0px 27px 1px rgba(0,0,0,0.75);
- outline: none;
-
-border-radius: 60%;
+width:200px;
+height:80px;
+outline: none;
+font-family: sans-serif;
+font-size: 25;
+font-weight: bold;
+background-color: #E9F800;
+border-color:#E9F800;
+border-style: hidden;
+cursor: pointer;
 }
 
 
@@ -80,12 +93,15 @@ button:hover{
 
   width:200px;
   height:80px;
+  transition: 0.4s;
+  -webkit-box-shadow: 0px 0px 31px -5px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 0px 31px -5px rgba(0,0,0,1);
+  box-shadow: 0px 0px 31px -5px rgba(0,0,0,1);
 
--webkit-box-shadow: 0px 0px 41px 0px rgba(0, 85, 255,0.56);
--moz-box-shadow: 0px 0px 41px 0px rgba(0, 85, 255,0.56);
-box-shadow: 0px 0px 41px 0px rgba(0, 85, 255,0.56);
-transition: 0.2s;
-border-radius: 60%;
+}
+
+button:active{
+background-color:#FFDC30;
 
 }
 
@@ -99,32 +115,77 @@ border-radius: 60%;
 }
 
 #voltage{
+  border-style: double;
+  border-color: black;
+  outline: none;
+  text-align: center;
+border-radius: 50px;
+width: 200px;
+height: 50px;
 
 }
 
 #voltage:hover{
+  -webkit-box-shadow: 0px 0px 110px -4px rgba(143,137,16,0.54);
+  -moz-box-shadow: 0px 0px 110px -4px rgba(143,137,16,0.54);
+  box-shadow: 0px 0px 110px -4px rgba(143,137,16,0.54);
+  width: 250px;
+  height: 50px;
+  transition: 0.3s;
+}
+
+#voltage:active{
+
 
 }
 
 #current{
-
+  border-style: double;
+    border-color: black;
+    outline: none;
+    text-align: center;
+  border-radius: 50px;
+  width: 200px;
+  height: 50px;
 }
 
 #current:hover{
+  -webkit-box-shadow: 0px 0px 110px -4px rgba(143,137,16,0.54);
+  -moz-box-shadow: 0px 0px 110px -4px rgba(143,137,16,0.54);
+  box-shadow: 0px 0px 110px -4px rgba(143,137,16,0.54);
+  width: 250px;
+  height: 50px;
+  transition: 0.3s;
+}
+
+#current:active{
 
 }
 
+
 #resistance{
-
-
+border-style: double;
+  border-color: black;
+  outline: none;
+  text-align: center;
+border-radius: 50px;
+  width: 200px;
+  height: 50px;
 }
 
 #resistance:hover{
+  -webkit-box-shadow: 0px 0px 110px -4px rgba(143,137,16,0.54);
+  -moz-box-shadow: 0px 0px 110px -4px rgba(143,137,16,0.54);
+  box-shadow: 0px 0px 110px -4px rgba(143,137,16,0.54);
+  width: 250px;
+  height: 50px;
+  transition: 0.3s;
+}
+
+#resistance:active{
 
 
 }
-
-
 
 </style>
 
@@ -152,20 +213,24 @@ border-radius: 60%;
 
 
 <center>
-
+<div class="calbox" >
+<h1>VOLTAGE</h1>
 <input id="voltage" class="calculatorbox" type="number"  value="">
 
-
+<h1>CURRENT</h1>
 <input id="current" class="calculatorbox" type="number"  value="">
 
 
-
+<h1>RESISTANCE</h1>
 <input id="resistance"  class="calculatorbox" type="number"  value="">
+</div>
+
 <br>
 </center>
+<br>
+<br>
 
-
-<center><button onclick="calculate()" >Calculate</button></center>
+<center><button onclick="calculate()" >CALCULATE</button></center>
 
 
 </body>
@@ -179,25 +244,60 @@ function calculate() {
   var voltage = document.getElementById("voltage").value;
   var current = document.getElementById("current").value;
   var resistance = document.getElementById("resistance").value;
+  var c;
+  var v;
+  var r;
 
-  if ( voltage < 1 || current < 1 || resistance < 1 ) {
+  if ( voltage == null || current  == null || resistance == null ) {
 
 alert("Please add all values");
 
 } else {
 
-  var v = current * resistance;
-  var c = voltage / current;
-  var r = voltage / resistance;
+
+
+
+calculatevoltage();
+calculatecurrent()
+calculateresistance()
 
 
 
 
+}
+
+
+function calculatevoltage(){
+
+v = current * resistance;
 document.getElementById("voltage").value = v;
+
+}
+
+
+
+function calculatecurrent(){
+
+  c = voltage / resistance;
 document.getElementById("current").value = c;
+
+}
+
+
+
+function calculateresistance(){
+
+r = voltage / current;
 document.getElementById("resistance").value = r;
 
 }
+
+
+
+
+
+
+
 
 
 
