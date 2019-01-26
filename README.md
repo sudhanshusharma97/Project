@@ -1,2 +1,2 @@
 # Project
-Simple calculator for ohm's law 
+Simple calculator for calculating ohm's law 
